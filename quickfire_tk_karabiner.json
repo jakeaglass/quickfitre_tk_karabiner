@@ -1,0 +1,52 @@
+{
+  "title": "Quickfire TK Numpad",
+  "rules": [
+    {
+      "description": "Fix for QuickFire TK Keyboard Numpad",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "keypad_num_lock"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 0
+              }
+            }
+          ],
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "keypad_num_lock"
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 0
+            }
+          ],
+          "to": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 1
+              }
+            }
+          ],
+        },
+      ]
+    }
+  ]
+}
